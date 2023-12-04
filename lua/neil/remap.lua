@@ -16,7 +16,6 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true 
 -- 使用 <F2> 交換當前視窗和下一個視窗的位置
 vim.api.nvim_set_keymap('n', '<F2>', '<C-w>x', { noremap = true, silent = true })
 
-
 -- lsp format
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
@@ -24,4 +23,4 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.g.copilot_assume_mapped = true
 
 -- clipboard
--- vim.api.clipboard = { name = 'and' }
+vim.api.clipboard = { name = 'unnamed' }
