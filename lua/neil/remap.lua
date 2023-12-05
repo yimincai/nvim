@@ -1,3 +1,5 @@
+vim.notify = require("notify")
+
 -- show prev view
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -17,7 +19,10 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('n', '<F2>', '<C-w>x', { noremap = true, silent = true })
 
 -- lsp format
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>f", function()
+    vim.lsp.buf.format()
+    vim.notify("Formatted", "info", { title = "LSP" })
+end)
 
 -- Copilot
 vim.g.copilot_assume_mapped = true
