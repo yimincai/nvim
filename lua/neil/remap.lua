@@ -27,5 +27,6 @@ end)
 -- Copilot
 vim.g.copilot_assume_mapped = true
 
--- clipboard
-vim.api.clipboard = { name = 'unnamed' }
+-- Clipboard
+vim.api.nvim_set_keymap('n', '<leader>y', '"+y<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', '<leader>y', '"+y<CR>', { noremap = true, silent = true })
