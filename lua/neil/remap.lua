@@ -39,4 +39,7 @@ vim.g.copilot_assume_mapped = true
 vim.api.nvim_set_keymap('n', '<leader>y', '"+y<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('x', '<leader>y', '"+y<CR>', { noremap = true, silent = true })
 
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+vim.keymap.set('n', '<leader>q', function() require("trouble").toggle() end)
+
+vim.keymap.set("n", "<leader>wtf", "<cmd>CellularAutomaton make_it_rain<CR>")
+vim.keymap.set("n", "<leader>love", "<cmd>CellularAutomaton game_of_life<CR>")
