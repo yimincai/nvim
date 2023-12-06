@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'j-hui/fidget.nvim'
+    use { 'folke/todo-comments.nvim', requires = 'nvim-lua/plenary.nvim' }
     use 'rcarriga/nvim-notify'
     use 'stevearc/conform.nvim'
     use {
@@ -22,7 +23,6 @@ return require('packer').startup(function(use)
     use { 'olimorris/onedarkpro.nvim' }
     use { 'folke/tokyonight.nvim' }
     use({ 'rose-pine/neovim' })
-
     --	themes
 
     -- comments
