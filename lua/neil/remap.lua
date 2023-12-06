@@ -16,12 +16,20 @@ vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 
 -- 使用 <F2> 交換當前視窗和下一個視窗的位置
-vim.api.nvim_set_keymap('n', '<F2>', '<C-w>x', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F3>', '<C-w>x', { noremap = true, silent = true })
+
+-- lsp format
+-- vim.keymap.set("n", "<leader>f", function()
+--     vim.lsp.buf.format()
+--     vim.cmd("write")
+--     vim.notify("Formatted and Saved", "info", { title = "LSP" })
+-- end)
 
 -- lsp format
 vim.keymap.set("n", "<leader>f", function()
-    vim.lsp.buf.format()
-    vim.notify("Formatted", "info", { title = "LSP" })
+    vim.cmd("write")
+    vim.cmd("LspRestart")
+    vim.notify("File Saved", "info", { title = "LSP" })
 end)
 
 -- Copilot
@@ -30,3 +38,5 @@ vim.g.copilot_assume_mapped = true
 -- Clipboard
 vim.api.nvim_set_keymap('n', '<leader>y', '"+y<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('x', '<leader>y', '"+y<CR>', { noremap = true, silent = true })
+
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)

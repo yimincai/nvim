@@ -10,23 +10,19 @@ return require('packer').startup(function(use)
     use 'lukas-reineke/indent-blankline.nvim'
     use 'j-hui/fidget.nvim'
     use 'rcarriga/nvim-notify'
+    use 'stevearc/conform.nvim'
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.5',
+        'nvim-telescope/telescope.nvim', tag = '0.1.x',
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
     -- themes
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use { 'catppuccin/nvim' }
+    use { 'olimorris/onedarkpro.nvim' }
+    use { 'folke/tokyonight.nvim' }
+    use({ 'rose-pine/neovim' })
 
-    --  use({
-    --	  'rose-pine/neovim',
-    --	  as = 'rose-pine',
-    --	  config = function()
-    --		  vim.cmd('colorscheme rose-pine')
-    --	  end
-    --	})
-    --
     --	themes
 
     -- comments
@@ -37,39 +33,39 @@ return require('packer').startup(function(use)
         end
     }
 
-    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-    use("nvim-treesitter/playground")
-    use("mbbill/undotree")
-    use("tpope/vim-fugitive")
-    use("nvim-treesitter/nvim-treesitter-context");
-    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-        require("toggleterm").setup()
+    use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
+    use('nvim-treesitter/playground')
+    use('mbbill/undotree')
+    use('tpope/vim-fugitive')
+    use('nvim-treesitter/nvim-treesitter-context');
+    use { 'akinsho/toggleterm.nvim', tag = '*', config = function()
+        require('toggleterm').setup()
     end }
 
     use {
-        "windwp/nvim-autopairs",
+        'windwp/nvim-autopairs',
         config = function()
-            require("nvim-autopairs").setup {
+            require('nvim-autopairs').setup {
             }
         end
     }
 
     use {
-        "nvim-neo-tree/neo-tree.nvim",
-        version = "*",
+        'nvim-neo-tree/neo-tree.nvim',
+        version = '*',
         requires = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim",
-            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+            'MunifTanjim/nui.nvim',
+            -- '3rd/image.nvim', -- Optional image support in preview window: See `# Preview Mode` for more information
         }
     }
 
     use({
-        "kdheepak/lazygit.nvim",
+        'kdheepak/lazygit.nvim',
         -- optional for floating window border decoration
         requires = {
-            "nvim-lua/plenary.nvim",
+            'nvim-lua/plenary.nvim',
         },
     })
 
@@ -96,6 +92,6 @@ return require('packer').startup(function(use)
         }
     }
 
-    use("folke/zen-mode.nvim")
-    use("github/copilot.vim")
+    use('folke/zen-mode.nvim')
+    use('github/copilot.vim')
 end)
