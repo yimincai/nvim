@@ -16,3 +16,20 @@ vim.o.relativenumber = true
 vim.o.cursorline = true
 vim.o.number = true
 vim.o.wrap = true
+
+vim.g.clipboard = {
+    name = 'myClipboard',
+    copy = {
+        ['+'] = 'pbcopy',
+        ['*'] = 'pbcopy',
+        ['~'] = 'xclip -selection clipboard',
+        ['']  = 'xclip -selection clipboard',
+    },
+    paste = {
+        ['+'] = 'pbpaste',
+        ['*'] = 'pbpaste',
+        ['~'] = 'xclip -selection clipboard -o',
+        ['']  = 'xclip -selection clipboard -o',
+    },
+    cache_enabled = 0,
+}
