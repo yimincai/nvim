@@ -6,7 +6,6 @@ vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-    use 'lewis6991/gitsigns.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'j-hui/fidget.nvim'
     use { 'folke/todo-comments.nvim', requires = 'nvim-lua/plenary.nvim' }
@@ -92,8 +91,18 @@ return require('packer').startup(function(use)
         }
     }
 
+    use({
+        'nvimdev/lspsaga.nvim',
+        requires = { 'nvim-lspconfig' },
+    })
+
+
     use('folke/zen-mode.nvim')
     use('github/copilot.vim')
     use('eandrju/cellular-automaton.nvim')
     use('folke/trouble.nvim')
+    -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
+    use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
+    use 'lewis6991/gitsigns.nvim'     -- OPTIONAL: for git status
+    use 'romgrk/barbar.nvim'
 end)

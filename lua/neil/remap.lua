@@ -28,7 +28,7 @@ vim.api.nvim_set_keymap('n', '<F3>', '<C-w>x', { noremap = true, silent = true }
 -- lsp format
 vim.keymap.set("n", "<leader>f", function()
     vim.cmd("write")
-    vim.cmd("LspRestart")
+    -- vim.cmd("LspRestart")
     vim.notify("File Saved", "info", { title = "LSP" })
 end)
 
