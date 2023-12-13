@@ -28,16 +28,21 @@ vim.api.nvim_set_keymap('n', '<F3>', '<C-w>x', { noremap = true, silent = true }
 -- lsp format
 vim.keymap.set("n", "<leader>f", function()
     vim.cmd("write")
-    -- vim.cmd("LspRestart")
-    vim.notify("File Saved", "info", { title = "LSP" })
+end)
+
+
+-- lsp restart
+vim.keymap.set("n", "<leader>R", function()
+    vim.cmd("LspRestart")
+    vim.notify("Lsp Restarted", "info", { title = "LSP" })
 end)
 
 -- Copilot
 vim.g.copilot_assume_mapped = true
 
 -- Clipboard
-vim.api.nvim_set_keymap('n', '<leader>y', '"+y<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('x', '<leader>y', '"+y<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>y', '"+y<CR>', { noremap = true })
+vim.api.nvim_set_keymap('x', '<leader>y', '"+y<CR>', { noremap = true })
 
 -- Trouble
 vim.keymap.set('n', '<leader>q', function() require("trouble").toggle() end)
@@ -48,3 +53,17 @@ vim.keymap.set("n", "<leader>love", "<cmd>CellularAutomaton game_of_life<CR>")
 
 -- Todo comment
 vim.keymap.set("n", "<leader>td", "<cmd>TodoTelescope<CR>")
+
+-- Debuger
+vim.api.nvim_set_keymap("n", "<leader>dt", ":lua require('dapui').open()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>ds", ":lua require('dapui').close()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>db", ":DapToggleBreakpoint<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>dc", ":DapContinue<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>dr", ":lua require('dapui').open({reset=true})<CR>", { noremap = true })
+
+-- Fold
+-- Key mappings for folding and unfolding
+-- vim.api.nvim_set_keymap('n', '<leader>zo', ':foldopen<CR>', { noremap = true, silent = true })   -- fold open (under the cursor)
+vim.api.nvim_set_keymap('n', 'zj', ':foldopen!<CR>', { noremap = true, silent = true })  -- fold open all
+-- vim.api.nvim_set_keymap('n', '<leader>zc', ':foldclose<CR>', { noremap = true, silent = true })  -- fold close
+vim.api.nvim_set_keymap('n', 'zk', ':foldclose!<CR>', { noremap = true, silent = true }) -- fold close all

@@ -17,6 +17,8 @@ vim.o.cursorline = true
 vim.o.number = true
 vim.o.wrap = true
 
+vim.o.foldmethod = 'indent'
+
 vim.g.clipboard = {
     name = 'myClipboard',
     copy = {

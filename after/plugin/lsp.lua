@@ -7,8 +7,10 @@ lsp.ensure_installed({
     'rust_analyzer',
 })
 
-lsp.configure('go', {
+
+lsp.configure('gopls', {
     settings = {
+        filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
         gopls = {
             analyses = {
                 unusedparams = true,

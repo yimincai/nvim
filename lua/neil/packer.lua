@@ -97,6 +97,17 @@ return require('packer').startup(function(use)
     })
 
 
+    -- debuger
+    use 'folke/neodev.nvim'
+    use({
+        'rcarriga/nvim-dap-ui',
+        requires = { 'mfussenegger/nvim-dap' },
+    })
+    use 'theHamsta/nvim-dap-virtual-text'
+    use 'leoluz/nvim-dap-go'
+    require('dap-go').setup()
+
+
     use('folke/zen-mode.nvim')
     use('github/copilot.vim')
     use('eandrju/cellular-automaton.nvim')
